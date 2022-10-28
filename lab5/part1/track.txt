@@ -1,0 +1,58 @@
+#######################Part1###########################
+Start time: 19:23:47 on Oct 28,2022
+vlog part1.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part1
+-- Compiling module T_FF
+
+Top level modules:
+	part1
+	T_FF
+End time: 19:23:48 on Oct 28,2022, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/5/test/run.do" work.part1_tb 
+# Start time: 19:23:48 on Oct 28,2022
+# Loading sv_std.std
+# Loading work.part1_tb
+# Loading work.part1
+# do /cad2/ece241f/public/5/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    3, Clear_b = 0, Enable = 0, current out =   0
+# At cycle                    3, Your output =   0, expected output =   0, PASSED
+# At cycle                    3, Clear_b = 1, Enable = 0, current out =   0
+# At cycle                    6, Your output =   0, expected output =   0, PASSED
+# At cycle                    7, Clear_b = 1, Enable = 1, current out =   0
+# At cycle                   31, Your output =  24, expected output =  24, PASSED
+# At cycle                   38, Your output =  31, expected output =  31, PASSED
+# At cycle                   38, Clear_b = 1, Enable = 0, current out =  31
+# At cycle                   45, Your output =  31, expected output =  31, PASSED
+# At cycle                   45, Clear_b = 1, Enable = 1, current out =  31
+# At cycle                   46, Your output =  32, expected output =  32, PASSED
+# At cycle                   46, Clear_b = 1, Enable = 0, current out =  32
+# At cycle                   56, Your output =  32, expected output =  32, PASSED
+# At cycle                   56, Clear_b = 0, Enable = 1, current out =  32
+# At cycle                   57, Your output =   0, expected output =   0, PASSED
+# At cycle                   57, Clear_b = 1, Enable = 1, current out =   0
+# At cycle                   74, Your output =  18, expected output =  17, FAILED
+# Golden output is assigned to your output to avoid propagated mistakes
+# 
+# ** Note: $finish    : /cad2/ece241f/public/5/test/part1_tb.sv(84)
+#    Time: 73500 ps  Iteration: 0  Instance: /part1_tb
+# End time: 19:23:48 on Oct 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+######################SUMMARY of part1##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 8
+Number of FAILED: 1
+part1 is done!
