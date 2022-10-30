@@ -10,9 +10,7 @@ module part3(ClockIn, Resetn, Start, Letter,
     wire [11-1:0] morse;
     lut l0(.letter(Letter), .morse(morse));
 
-    sreg sr0(.shift(NewBitOut), .load(Start), .D(morse), .q(DotDashOut), .resetn(Resetn));
-
-
+    sreg sr0(.clk(ClockIn), .shift(NewBitOut), .load(Start), .D(morse), .q(DotDashOut), .resetn(Resetn));
 endmodule
 
 
@@ -35,7 +33,7 @@ module RateDivider(clk, Enable, Resetn, Start);
     reg [MAXBITS-1:0] count_max;
 
     initial begin
-        count_max = FREQdiv2;
+        count_max = FREQdiv2-1;
         count = count_max;
         bits_to_send = TOTAL_BITS;
     end
@@ -68,7 +66,7 @@ endmodule
 module lut(letter, morse);
 
     input [2:0] letter;
-    output reg [11:0] morse;
+    output reg [11-1:0] morse;
 
 
     always @(*)
@@ -89,9 +87,10 @@ module lut(letter, morse);
 endmodule
 
 
-module sreg(shift, load, D, q, resetn);
+module sreg(clk, shift, load, D, q, resetn);
     parameter TOTAL_BITS = 11;
 
+    input clk;
     input resetn;
     input shift, load;
     input [TOTAL_BITS-1:0] D; // Need 11 bits for morse code letters.
@@ -101,7 +100,7 @@ module sreg(shift, load, D, q, resetn);
     assign q = morse[TOTAL_BITS-1];
 
 
-    always @(shift, load, resetn)
+    always @(posedge clk, negedge resetn)
     begin
         if (!resetn) morse <= 0;
         else if (load) morse <= D;
