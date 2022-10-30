@@ -1,5 +1,5 @@
 #######################Part3###########################
-Start time: 16:03:32 on Oct 30,2022
+Start time: 16:38:34 on Oct 30,2022
 vlog part3.v 
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module part3
@@ -9,14 +9,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 
 Top level modules:
 	part3
-End time: 16:03:32 on Oct 30,2022, Elapsed time: 0:00:00
+End time: 16:38:34 on Oct 30,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.6d
 
 # vsim -c -do "/cad2/ece241f/public/5/test/run.do" work.part3_tb 
-# Start time: 16:03:33 on Oct 30,2022
+# Start time: 16:38:34 on Oct 30,2022
 # Loading sv_std.std
 # Loading work.part3_tb
 # Loading work.part3
@@ -57,45 +57,49 @@ Reading pref.tcl
 # 	PASSED
 # At cycle                 2773, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 3273, NewBitOut = 0
-# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
+# At cycle                 3023, your output = 0, expected output = 0
+# 	PASSED
 # Finish one morse code for Letter = 0
-# At cycle                 3273, Reset = 0, Enable = 0, Select = 1
-# At cycle                 3275, Reset = 1, Enable = 0, Select = 1
-# At cycle                 3295, Reset = 1, Enable = 1, Select = 1
-# At cycle                 3296, Reset = 1, Enable = 0, Select = 1
+# At cycle                 3023, Reset = 0, Enable = 0, Select = 1
+# At cycle                 3025, Reset = 1, Enable = 0, Select = 1
+# At cycle                 3045, Reset = 1, Enable = 1, Select = 1
+# At cycle                 3046, Reset = 1, Enable = 0, Select = 1
+# At cycle                 3295, your output = 1, expected output = 1
+# 	PASSED
 # At cycle                 3545, your output = 1, expected output = 1
 # 	PASSED
 # At cycle                 3795, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 4045, your output = 1, expected output = 1
+# At cycle                 4045, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 4295, your output = 0, expected output = 0
+# At cycle                 4295, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 4545, your output = 1, expected output = 1
+# At cycle                 4545, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 4795, your output = 0, expected output = 0
+# At cycle                 4795, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 5045, your output = 1, expected output = 1
+# At cycle                 5045, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 5295, your output = 0, expected output = 0
+# At cycle                 5295, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 5545, your output = 1, expected output = 1
+# At cycle                 5545, your output = 0, expected output = 0
 # 	PASSED
 # At cycle                 5795, your output = 0, expected output = 0
 # 	PASSED
 # At cycle                 6045, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 6545, NewBitOut = 0
-# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
 # Finish one morse code for Letter = 1
-# At cycle                 6545, Reset = 0, Enable = 0, Select = 2
-# At cycle                 6547, Reset = 1, Enable = 0, Select = 2
-# At cycle                 6567, Reset = 1, Enable = 1, Select = 2
-# At cycle                 6568, Reset = 1, Enable = 0, Select = 2
+# At cycle                 6045, Reset = 0, Enable = 0, Select = 2
+# At cycle                 6047, Reset = 1, Enable = 0, Select = 2
+# At cycle                 6067, Reset = 1, Enable = 1, Select = 2
+# At cycle                 6068, Reset = 1, Enable = 0, Select = 2
+# At cycle                 6317, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 6567, your output = 1, expected output = 1
+# 	PASSED
 # At cycle                 6817, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 7067, your output = 1, expected output = 1
+# At cycle                 7067, your output = 0, expected output = 0
 # 	PASSED
 # At cycle                 7317, your output = 1, expected output = 1
 # 	PASSED
@@ -103,37 +107,33 @@ Reading pref.tcl
 # 	PASSED
 # At cycle                 7817, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 8067, your output = 0, expected output = 0
+# At cycle                 8067, your output = 1, expected output = 1
 # 	PASSED
 # At cycle                 8317, your output = 1, expected output = 1
 # 	PASSED
-# At cycle                 8567, your output = 1, expected output = 1
+# At cycle                 8567, your output = 0, expected output = 0
 # 	PASSED
 # At cycle                 8817, your output = 1, expected output = 1
 # 	PASSED
 # At cycle                 9067, your output = 0, expected output = 0
 # 	PASSED
-# At cycle                 9317, your output = 1, expected output = 1
-# 	PASSED
-# At cycle                 9817, NewBitOut = 0
-# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
 # Finish one morse code for Letter = 2
+# At cycle                 9317, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 9567, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 9817, your output = 0, expected output = 0
+# 	PASSED
 # At cycle                10067, your output = 0, expected output = 0
-# 	PASSED
-# At cycle                10317, your output = 0, expected output = 0
-# 	PASSED
-# At cycle                10567, your output = 0, expected output = 0
-# 	PASSED
-# At cycle                10817, your output = 0, expected output = 0
 # 	PASSED
 # Finished checking that output remains at 0 after sequence is done2
 # ** Note: $finish    : /cad2/ece241f/public/5/test/part3_tb.sv(127)
-#    Time: 1081700 ns  Iteration: 0  Instance: /part3_tb
-# End time: 16:03:33 on Oct 30,2022, Elapsed time: 0:00:00
+#    Time: 1006700 ns  Iteration: 0  Instance: /part3_tb
+# End time: 16:38:34 on Oct 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 ######################SUMMARY of part3##########################
 Number of Errors by compiling the verilog code: 0
 Number of Errors by running the simulation: 0
-Number of PASSED: 37
-Number of FAILED: 3
+Number of PASSED: 40
+Number of FAILED: 0
 part3 is done!
