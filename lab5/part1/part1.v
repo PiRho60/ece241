@@ -25,8 +25,7 @@ endmodule
 
 // module part1(Clock, Enable, Clear_b, CounterValue);
 //     input Clock, Enable, Clear_b;
-//     output reg [7:0] CounterValue;
-
+//     output reg [7:0] CounterValue = 8'b00000000;
 //     always @(posedge Clock, Clear_b)
 //     begin
 //         if (!Clear_b) CounterValue = 0;
@@ -48,19 +47,3 @@ module T_FF(T, Q, Clock, Clear_b);
         else Q <= Q;
     end
 endmodule
-
-
-
-
-// module part1(Clock, Enable, Clear_b, CounterValue);
-//     input Clock, Enable, Clear_b;
-//     output reg [7:0] CounterValue;
-
-//     always @(posedge Clock, Clear_b)
-//     begin
-//         if (!Clear_b) CounterValue <= 0;
-//         else if (Enable) CounterValue <= CounterValue + 1;
-//     end
-
-
-// endmodule
