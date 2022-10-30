@@ -1,5 +1,5 @@
 #######################Part1###########################
-Start time: 20:00:03 on Oct 29,2022
+Start time: 09:30:11 on Oct 30,2022
 vlog part1.v 
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module part1
@@ -7,18 +7,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 
 Top level modules:
 	part1
-	T_FF
-End time: 20:00:03 on Oct 29,2022, Elapsed time: 0:00:00
+End time: 09:30:11 on Oct 30,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.6d
 
 # vsim -c -do "/cad2/ece241f/public/5/test/run.do" work.part1_tb 
-# Start time: 20:00:04 on Oct 29,2022
+# Start time: 09:30:12 on Oct 30,2022
 # Loading sv_std.std
 # Loading work.part1_tb
 # Loading work.part1
+# Loading work.T_FF
 # do /cad2/ece241f/public/5/test/run.do
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
@@ -43,16 +43,14 @@ Reading pref.tcl
 # At cycle                   56, Clear_b = 0, Enable = 1, current out =  32
 # At cycle                   57, Your output =   0, expected output =   0, PASSED
 # At cycle                   57, Clear_b = 1, Enable = 1, current out =   0
-# At cycle                   74, Your output =  18, expected output =  17, FAILED
-# Golden output is assigned to your output to avoid propagated mistakes
-# 
+# At cycle                   74, Your output =  17, expected output =  17, PASSED
 # ** Note: $finish    : /cad2/ece241f/public/5/test/part1_tb.sv(84)
 #    Time: 73500 ps  Iteration: 0  Instance: /part1_tb
-# End time: 20:00:04 on Oct 29,2022, Elapsed time: 0:00:00
+# End time: 09:30:12 on Oct 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 ######################SUMMARY of part1##########################
 Number of Errors by compiling the verilog code: 0
 Number of Errors by running the simulation: 0
-Number of PASSED: 8
-Number of FAILED: 1
+Number of PASSED: 9
+Number of FAILED: 0
 part1 is done!

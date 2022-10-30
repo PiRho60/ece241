@@ -1,0 +1,141 @@
+#######################Part3###########################
+Start time: 14:24:31 on Oct 30,2022
+vlog part3.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part3
+-- Compiling module RateDivider
+-- Compiling module lut
+-- Compiling module sreg
+
+Top level modules:
+	part3
+End time: 14:24:31 on Oct 30,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/5/test/run.do" work.part3_tb 
+# Start time: 14:24:32 on Oct 30,2022
+# Loading sv_std.std
+# Loading work.part3_tb
+# Loading work.part3
+# Loading work.RateDivider
+# Loading work.lut
+# Loading work.sreg
+# ** Warning: (vsim-3015) part3.v(11): [PCDPC] - Port size (12) does not match connection size (11) for port 'morse'. The port definition is at: part3.v(68).
+#    Time: 0 ps  Iteration: 0  Instance: /part3_tb/DUT/l0 File: part3.v
+# do /cad2/ece241f/public/5/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    1, Reset = 0, Enable = 0, Select = 0
+# At cycle                    3, Reset = 1, Enable = 0, Select = 0
+# At cycle                   23, Reset = 1, Enable = 1, Select = 0
+# At cycle                   24, Reset = 1, Enable = 0, Select = 0
+# At cycle                  274, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                  525, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                  776, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 1027, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 1278, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 1529, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 1780, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 2031, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 2282, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 2533, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 2784, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 3284, NewBitOut = 0
+# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
+# Finish one morse code for Letter = 0
+# At cycle                 3284, Reset = 0, Enable = 0, Select = 1
+# At cycle                 3286, Reset = 1, Enable = 0, Select = 1
+# At cycle                 3306, Reset = 1, Enable = 1, Select = 1
+# At cycle                 3307, Reset = 1, Enable = 0, Select = 1
+# At cycle                 3557, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 3808, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 4059, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 4310, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 4561, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 4812, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 5063, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 5314, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 5565, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 5816, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 6067, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                 6567, NewBitOut = 0
+# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
+# Finish one morse code for Letter = 1
+# At cycle                 6567, Reset = 0, Enable = 0, Select = 2
+# At cycle                 6569, Reset = 1, Enable = 0, Select = 2
+# At cycle                 6589, Reset = 1, Enable = 1, Select = 2
+# At cycle                 6590, Reset = 1, Enable = 0, Select = 2
+# At cycle                 6840, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 7091, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 7342, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 7593, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 7844, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 8095, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 8346, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 8597, your output = 1, expected output = 1
+# 	PASSED
+# At cycle                 8848, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 9099, your output = 1, expected output = 0
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 9350, your output = 0, expected output = 1
+# 	FAILED: INCORRECT OUTPUT
+# At cycle                 9850, NewBitOut = 0
+# 	FAILED: NewBitOut NOT ASSERTED AT CORRECT INTERVAL (0.5s +/- 0.02s) GIVEN 500Hz CLOCK
+# Finish one morse code for Letter = 2
+# At cycle                10100, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                10350, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                10600, your output = 0, expected output = 0
+# 	PASSED
+# At cycle                10850, your output = 0, expected output = 0
+# 	PASSED
+# Finished checking that output remains at 0 after sequence is done2
+# ** Note: $finish    : /cad2/ece241f/public/5/test/part3_tb.sv(127)
+#    Time: 1085 us  Iteration: 0  Instance: /part3_tb
+# End time: 14:24:32 on Oct 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
+######################SUMMARY of part3##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 20
+Number of FAILED: 20
+part3 is done!

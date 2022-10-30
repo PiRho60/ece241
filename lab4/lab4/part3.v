@@ -9,7 +9,7 @@ module flipflop(clock, reset, D, Q);
     input clock, reset, D;
     output reg Q;
 
-    always @(posedge clock)
+    always @(posedge clock, posedge reset)
     begin
         if(reset)
             Q <= 0;

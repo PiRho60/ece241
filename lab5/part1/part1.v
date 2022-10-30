@@ -40,7 +40,7 @@ module T_FF(T, Q, Clock, Clear_b);
     input T, Clock, Clear_b;
     output reg Q;
 
-    always @(posedge Clock, Clear_b)
+    always @(posedge Clock, negedge Clear_b)
     begin
         if (!Clear_b) Q <= 0;
         else if (T) Q <= ~Q;

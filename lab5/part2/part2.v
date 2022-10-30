@@ -1,9 +1,10 @@
-module RateDivider(clk, Enable, Speed);
-    parameter FREQ = 1;
-    parameter FREQ2 = 2;
-    parameter FREQ4 = 4;
-    parameter MAXBITS = 2;
+module RateDivider(clk, Enable, Speed, Reset);
+    parameter FREQ = 500;
+    parameter FREQ2 = 1000;
+    parameter FREQ4 = 2000;
+    parameter MAXBITS = 11;
 
+    input Reset;
 
     input clk;
     reg [MAXBITS-1:0] count;
@@ -15,7 +16,7 @@ module RateDivider(clk, Enable, Speed);
     
     reg [MAXBITS-1:0] count_max;
 
-    always @(*) begin
+    always @(Speed) begin
         if (Speed == 2'b00) count_max = 0;
         else if (Speed == 2'b01) count_max = FREQ-1;
         else if (Speed == 2'b10) count_max = FREQ2-1;
@@ -24,21 +25,32 @@ module RateDivider(clk, Enable, Speed);
         end
     end
 
-    initial count = count_max;
+    initial begin
+        if (Speed == 2'b00) count_max = 0;
+        else if (Speed == 2'b01) count_max = FREQ-1;
+        else if (Speed == 2'b10) count_max = FREQ2-1;
+        else begin
+            count_max = FREQ4-1;
+        end
+        count = count_max;
+    end
 
-    always @(posedge clk)
+
+    always @(posedge clk, posedge Reset)
     begin
-        if (Enable)
-            count <= count_max;
+        if (Reset) count <= count_max;
+        else if (Enable) count <= count_max;
         else count <= count - 1;
     end
 endmodule
 
 module DisplayCounter(clk, Enable, Reset, q);
     input clk, Enable, Reset;
-    output reg [3:0] q = 0;
+    output reg [3:0] q;
 
-    always @(posedge clk, Reset, Enable)
+    initial q = 0;
+
+    always @(posedge clk, posedge Reset)
     begin
         if (Reset) q <= 0;
         else if (Enable) q <= q + 1;
@@ -54,6 +66,6 @@ module part2(ClockIn, Reset, Speed, CounterValue);
 
     wire EnableDC;
 
-    RateDivider rd0(.clk(ClockIn), .Enable(EnableDC), .Speed(Speed));
+    RateDivider rd0(.clk(ClockIn), .Enable(EnableDC), .Speed(Speed), .Reset(Reset));
     DisplayCounter dc0(.clk(ClockIn), .Enable(EnableDC), .Reset(Reset), .q(CounterValue));
 endmodule
