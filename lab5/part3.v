@@ -17,7 +17,7 @@ endmodule
 module RateDivider(clk, Enable, Resetn, Start);
     parameter FREQdiv2 = 250;
     parameter MAXBITS = 8;
-    parameter TOTAL_BITS = 11+2;
+    parameter TOTAL_BITS = 11+1;
 
     reg [3:0] bits_to_send;
     input Start;

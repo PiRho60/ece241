@@ -1,0 +1,43 @@
+#######################Part1###########################
+Start time: 12:17:48 on Nov 12,2022
+vlog part1.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part1
+
+Top level modules:
+	part1
+End time: 12:17:48 on Nov 12,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/6/test/run.do" work.part1_tb 
+# Start time: 12:17:49 on Nov 12,2022
+# Loading sv_std.std
+# Loading work.part1_tb
+# Loading work.part1
+# do /cad2/ece241f/public/6/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    1, reset = 0, w = 0
+# At cycle                    2, reset = 1, w = 0
+# At cycle                    4, reset = 1, w = 1
+# At cycle                    5, state =  0, output = 0, golden_state =  0, golden_output = 0 PASSED
+# At cycle                    6, state =  1, output = 0, golden_state =  1, golden_output = 0 PASSED
+# At cycle                    7, state =  2, output = 0, golden_state =  2, golden_output = 0 PASSED
+# ** Note: $finish    : /cad2/ece241f/public/6/test/part1_tb.sv(64)
+#    Time: 7 ns  Iteration: 0  Instance: /part1_tb
+# End time: 12:17:49 on Nov 12,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+######################SUMMARY of part1##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 3
+Number of FAILED: 0
+part1 is done!
