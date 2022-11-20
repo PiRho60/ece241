@@ -1,19 +1,19 @@
 #######################Part1###########################
-Start time: 13:57:15 on Nov 20,2022
+Start time: 16:02:37 on Nov 20,2022
 vlog part1.v 
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module part1
 
 Top level modules:
 	part1
-End time: 13:57:15 on Nov 20,2022, Elapsed time: 0:00:00
+End time: 16:02:37 on Nov 20,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.6d
 
 # vsim -L altera_mf_ver -c -do "/cad2/ece241f/public/7/test/run.do" work.part1_tb 
-# Start time: 13:57:16 on Nov 20,2022
+# Start time: 16:02:37 on Nov 20,2022
 # Loading sv_std.std
 # Loading work.part1_tb
 # Loading work.part1
@@ -41,7 +41,7 @@ Reading pref.tcl
 # At cycle                   18, Reading: addr =  3, output =  2, golden_output =  2, PASSED
 # ** Note: $finish    : /cad2/ece241f/public/7/test/part1_tb.sv(52)
 #    Time: 20 ns  Iteration: 0  Instance: /part1_tb
-# End time: 13:57:17 on Nov 20,2022, Elapsed time: 0:00:01
+# End time: 16:02:37 on Nov 20,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 7
 ######################SUMMARY of part1##########################
 Number of Errors by compiling the verilog code: 0

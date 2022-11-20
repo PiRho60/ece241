@@ -149,8 +149,7 @@ module datapath(input Resetn, Clock,
          if (ld_y) y_pos <= XY_Coord;
          if (increment_count) offset_count <= offset_count + 1;
          else offset_count <= 0;
-         //oColour <= clearing_screen ? 0 : Colour;
-         oColour <= Colour;
+         oColour <= clearing_screen ? 0 : Colour;
       end
    end
 
