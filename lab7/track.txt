@@ -1,0 +1,51 @@
+#######################Part1###########################
+Start time: 13:57:15 on Nov 20,2022
+vlog part1.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part1
+
+Top level modules:
+	part1
+End time: 13:57:15 on Nov 20,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -L altera_mf_ver -c -do "/cad2/ece241f/public/7/test/run.do" work.part1_tb 
+# Start time: 13:57:16 on Nov 20,2022
+# Loading sv_std.std
+# Loading work.part1_tb
+# Loading work.part1
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# do /cad2/ece241f/public/7/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, addr =  0, wren = 1, data =  x
+# At cycle                    0, addr =  0, wren = 1, data =  x
+# At cycle                    2, addr =  1, wren = 1, data =  0
+# At cycle                    4, addr =  2, wren = 1, data =  4
+# At cycle                    6, addr =  3, wren = 1, data = 10
+# At cycle                   10, addr =  0, wren = 0, data = 12
+# At cycle                   12, Reading: addr =  0, output =  0, golden_output =  0, PASSED
+# At cycle                   14, Reading: addr =  1, output =  4, golden_output =  4, PASSED
+# At cycle                   16, Reading: addr =  2, output = 10, golden_output = 10, PASSED
+# At cycle                   18, Reading: addr =  3, output =  2, golden_output =  2, PASSED
+# ** Note: $finish    : /cad2/ece241f/public/7/test/part1_tb.sv(52)
+#    Time: 20 ns  Iteration: 0  Instance: /part1_tb
+# End time: 13:57:17 on Nov 20,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 7
+######################SUMMARY of part1##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 4
+Number of FAILED: 0
+part1 is done!

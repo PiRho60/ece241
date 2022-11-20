@@ -1,0 +1,66 @@
+#######################Part2###########################
+Start time: 14:26:58 on Nov 20,2022
+vlog part2.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part2
+-- Compiling module control
+-- Compiling module datapath
+
+Top level modules:
+	part2
+End time: 14:26:58 on Nov 20,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/7/test/run.do" work.part2_tb 
+# Start time: 14:26:59 on Nov 20,2022
+# Loading sv_std.std
+# Loading work.part2_tb
+# Loading work.part2
+# Loading work.control
+# Loading work.datapath
+# do /cad2/ece241f/public/7/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, iResetn = 0, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   10, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   15, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   20, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 1, iColour = 0, iXY_Coord =   4
+# At cycle                   25, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   30, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   35, iResetn = 1, iPlotBox = 1, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   40, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# Start drawing a RED 4x4 box at (4,1)
+# At cycle                   57, Pixel (          4,           1) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          4,           2) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          4,           3) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          4,           4) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          5,           1) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          5,           2) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          5,           3) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          5,           4) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          6,           1) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          6,           2) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          6,           3) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          6,           4) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          7,           1) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          7,           2) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          7,           3) has Colour 0, Expected RED = 4 instead, FAILED
+# At cycle                   57, Pixel (          7,           4) has Colour 0, Expected RED = 4 instead, FAILED
+# ** Note: $finish    : /cad2/ece241f/public/7/test/part2_tb.sv(179)
+#    Time: 57 ns  Iteration: 0  Instance: /part2_tb
+# End time: 14:26:59 on Nov 20,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+######################SUMMARY of part2##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 0
+Number of FAILED: 16
+part2 is done!
