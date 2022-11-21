@@ -14,6 +14,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
    input wire [6:0] iXY_Coord;
    input wire 	    iClock;
    output wire [7:0] oX;         // VGA pixel coordinates
+   assign oX[7] = 0;
    output wire [6:0] oY;
 
    output wire [2:0] oColour;     // VGA pixel colour (0-7)
@@ -57,17 +58,16 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
               S_LOAD_Y = 2,
               S_LOAD_Y_WAIT = 3,
               S_DRAW = 4;
+              S_DRAW_BLACK = 5;
 
    always @(posedge Clock)
    begin
       if (!Resetn) begin
          Done <= 0;
-         clearing_screen <= 0;
       end
       else begin
          if (offset_count == 4'b1111) Done <= 1;
          else if (current_state == S_DRAW) Done <= 0;
-         clearing_screen = Black ? 1 : (clearing_screen && !Done);
       end
    end
 
@@ -79,6 +79,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          S_LOAD_Y: next_state = PlotBox ? S_LOAD_Y_WAIT : S_LOAD_Y;
          S_LOAD_Y_WAIT: next_state = PlotBox ? S_LOAD_Y_WAIT : S_DRAW;
          S_DRAW: next_state = (offset_count == 4'b1111) ? S_LOAD_X : S_DRAW;
+         S_DRAW_BLACK: next_state = (offset_count == 4'b1111) ? S_LOAD_X : S_DRAW_BLACK;
       endcase
    end
 
@@ -99,13 +100,18 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
             increment_count = 1;
             Plot = 1;
          end
+         S_DRAW_BLACK begin
+            increment_count = 1;
+            Plot = 1;
+            clearing_screen = 1;
+         end
       endcase
    end
 
    always @(posedge Clock)
    begin: state_FFs
       if (!Resetn) current_state <= S_LOAD_X;
-      else if (Black) current_state <= S_LOAD_X;  
+      else if (Black) current_state <= S_DRAW_BLACK;  
       else current_state <= next_state;
    end
 
