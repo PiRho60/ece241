@@ -23,14 +23,15 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
 
    //
    // Your code goes here
-   wire ld_x, ld_y, increment_count, clearing_screen;
+   wire ld_x, ld_y, increment_count, clearing_screen, ld_colour;
    wire [3:0] offset_count;
    control c0(.Resetn(iResetn), .PlotBox(iPlotBox), .Black(iBlack), 
               .Clock(iClock), .LoadX(iLoadX), .offset_count(offset_count),
               .Done(oDone), .ld_x(ld_x), .ld_y(ld_y),
               .increment_count(increment_count),
               .clearing_screen(clearing_screen),
-              .Plot(oPlot)
+              .Plot(oPlot),
+              .ld_colour(ld_colour)
               );
 
    datapath d0(.Resetn(iResetn), .Clock(iClock),
@@ -38,7 +39,8 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
                .ld_x(ld_x), .ld_y(ld_y), .increment_count(increment_count),
                .clearing_screen(clearing_screen), .oX(oX), .oY(oY),
                .oColour(oColour),
-               .offset_count(offset_count)
+               .offset_count(offset_count),
+               .ld_colour(ld_colour)
                );
    //
 
@@ -47,7 +49,7 @@ endmodule // part2
 module control(input Resetn, PlotBox, Black, Clock, LoadX, 
                input [3:0] offset_count,
                output reg Done = 0,
-               output reg ld_x = 0, ld_y = 0, increment_count = 0, 
+               output reg ld_x = 0, ld_y = 0, ld_colour = 0, increment_count = 0, 
                output reg Plot = 0, clearing_screen = 0
                );
 
@@ -57,7 +59,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
               S_LOAD_X_WAIT = 1,
               S_LOAD_Y = 2,
               S_LOAD_Y_WAIT = 3,
-              S_DRAW = 4;
+              S_DRAW = 4,
               S_DRAW_BLACK = 5;
 
    always @(posedge Clock)
@@ -88,19 +90,26 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
 
       ld_x = 0;
       ld_y = 0;
+      ld_colour = 0;
       increment_count = 0;
       Plot = 0;
       
       case (current_state)
-         S_LOAD_X:
+         // S_LOAD_X:
+         //    ld_x = 1;
+         S_LOAD_X_WAIT:
             ld_x = 1;
-         S_LOAD_Y:
+         // S_LOAD_Y:
+         //    ld_y = 1;
+         S_LOAD_Y_WAIT:begin
             ld_y = 1;
+            ld_colour = 1;
+         end
          S_DRAW: begin
             increment_count = 1;
             Plot = 1;
          end
-         S_DRAW_BLACK begin
+         S_DRAW_BLACK: begin
             increment_count = 1;
             Plot = 1;
             clearing_screen = 1;
@@ -121,7 +130,7 @@ endmodule
 module datapath(input Resetn, Clock,
                 input [2:0] Colour,
                 input [6:0] XY_Coord, 
-                input ld_x, ld_y, increment_count, clearing_screen,
+                input ld_x, ld_y, increment_count, clearing_screen, ld_colour,
                 output reg [7:0] oX = 0, 
                 output reg [6:0] oY = 0,
                 output reg [2:0] oColour = 0,
@@ -155,7 +164,7 @@ module datapath(input Resetn, Clock,
          if (ld_y) y_pos <= XY_Coord;
          if (increment_count) offset_count <= offset_count + 1;
          else offset_count <= 0;
-         oColour <= clearing_screen ? 0 : Colour;
+         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
       end
    end
 
