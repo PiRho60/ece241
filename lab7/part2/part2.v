@@ -73,7 +73,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
       end
    end
 
-   always @(posedge Clock)
+   always @(*)
    begin: state_table
       case (current_state)
          S_LOAD_X: next_state = LoadX ? S_LOAD_X_WAIT : S_LOAD_X;
