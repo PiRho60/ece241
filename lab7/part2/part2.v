@@ -145,8 +145,8 @@ module datapath(input Resetn, Clock,
    reg [7:0] x_init;
    reg [6:0] y_init;
    
-   reg [1:0] x_offset;
-   reg [1:0] y_offset;
+   reg [7:0] x_offset;
+   reg [6:0] y_offset;
 
    parameter X_SCREEN_PIXELS = 8'd160;
    parameter Y_SCREEN_PIXELS = 7'd120;
@@ -200,6 +200,9 @@ module datapath(input Resetn, Clock,
                end
             end
          end
+
+         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
+         if (increment_count) count <= count + 1;
       end
    end
 endmodule
