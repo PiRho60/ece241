@@ -1,5 +1,5 @@
 #######################Part2###########################
-Start time: 16:51:18 on Nov 21,2022
+Start time: 19:36:47 on Nov 21,2022
 vlog part2.v 
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module part2
@@ -8,19 +8,21 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 
 Top level modules:
 	part2
-End time: 16:51:18 on Nov 21,2022, Elapsed time: 0:00:00
+End time: 19:36:47 on Nov 21,2022, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.6d
 
 # vsim -c -do "/cad2/ece241f/public/7/test/run.do" work.part2_tb 
-# Start time: 16:51:19 on Nov 21,2022
+# Start time: 19:36:47 on Nov 21,2022
 # Loading sv_std.std
 # Loading work.part2_tb
 # Loading work.part2
 # Loading work.control
 # Loading work.datapath
+# ** Warning: (vsim-3015) part2.v(38): [PCDPC] - Port size (15) does not match connection size (4) for port 'offset_count'. The port definition is at: part2.v(143).
+#    Time: 0 ps  Iteration: 0  Instance: /part2_tb/U1/d0 File: part2.v
 # do /cad2/ece241f/public/7/test/run.do
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
 # ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
@@ -56,8 +58,8 @@ Reading pref.tcl
 # At cycle                   57, Pixel (          7,           4) has Colour 0, Expected RED = 4 instead, FAILED
 # ** Note: $finish    : /cad2/ece241f/public/7/test/part2_tb.sv(178)
 #    Time: 57 ns  Iteration: 0  Instance: /part2_tb
-# End time: 16:51:19 on Nov 21,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 7
+# End time: 19:36:48 on Nov 21,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 8
 ######################SUMMARY of part2##########################
 Number of Errors by compiling the verilog code: 0
 Number of Errors by running the simulation: 0
