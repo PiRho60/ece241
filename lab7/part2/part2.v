@@ -169,10 +169,13 @@ module datapath(input Resetn, Clock,
    parameter Y_SCREEN_PIXELS = 7'd120;
 
    always @(*) begin
-      if (clearing_screen) begin
-         x_init = 0;
-         y_init = 0;
-      end
+      if (ld_x_init) x_init = XY_Coord;
+      if (ld_y_init) y_init = XY_Coord;
+      if (ld_x_init_black) x_init = 0;
+      if (ld_y_init_black) y_init = 0;
+      if (ld_colour) oColour = Colour;
+      if (ld_colour_black) oColour = 0;
+      if (clear_count) count = 0;
 
       oX = x_init + x_offset;
       oY = y_init + y_offset; 
@@ -191,43 +194,79 @@ module datapath(input Resetn, Clock,
          count <= 0;
       end
       else begin
-         if (ld_x_init) x_init <= XY_Coord;
-         if (ld_y_init) y_init <= XY_Coord;
-         if (ld_x_init_black) x_init <= 0;
-         if (ld_y_init_black) y_init <= 0;
-         if (ld_colour) oColour <= Colour;
-         if (ld_colour_black) oColour <= 0;
-         if (clear_count) count <= 0;
+         // if (ld_x_init) x_init <= XY_Coord;
+         // if (ld_y_init) y_init <= XY_Coord;
+         // if (ld_x_init_black) x_init <= 0;
+         // if (ld_y_init_black) y_init <= 0;
+         // if (ld_colour) oColour <= Colour;
+         // if (ld_colour_black) oColour <= 0;
+         // if (clear_count) count <= 0;
 
          if (increment_count) begin 
-            count <= count + 1;
-            x_offset <= x_offset + 1;
+            
+            if (clearing_screen) begin
+               if (x_offset == X_SCREEN_PIXELS-1) begin
+                  if(y_offset != Y_SCREEN_PIXELS-1) begin
+                     x_offset <= 0;
+                     y_offset <= y_offset + 1;
+                     count <= count + 1;
+                  end
+                  else begin
+                     x_offset <= x_offset;
+                     y_offset <= y_offset;
+                     count <= count;
+                  end
+               end
+               else begin
+                  x_offset <= x_offset + 1;
+                  count <= count + 1;
+               end
+            end
+            else begin
+               if (x_offset == 3) begin
+                  if(y_offset != 3) begin
+                     x_offset <= 0;
+                     y_offset <= y_offset + 1;
+                     count <= count + 1;
+                  end
+                  else begin
+                     x_offset <= x_offset;
+                     y_offset <= y_offset;
+                     count <= count;
+                  end
+               end
+               else begin
+                  x_offset <= x_offset + 1;
+                  count <= count + 1;
+               end
+            end
+
          end
 
-         if (clearing_screen) begin
-            if (x_offset == X_SCREEN_PIXELS-1) begin
-               if(y_offset != Y_SCREEN_PIXELS-1) begin
-                  x_offset <= 0;
-                  y_offset <= y_offset + 1;
-               end
-               else begin
-                  x_offset <= x_offset;
-                  y_offset <= y_offset;
-               end
-            end
-         end
-         else begin
-            if (x_offset == 3) begin
-               if(y_offset != 3) begin
-                  x_offset <= 0;
-                  y_offset <= y_offset + 1;
-               end
-               else begin
-                  x_offset <= x_offset;
-                  y_offset <= y_offset;
-               end
-            end
-         end
+         // if (clearing_screen) begin
+         //    if (x_offset == X_SCREEN_PIXELS-1) begin
+         //       if(y_offset != Y_SCREEN_PIXELS-1) begin
+         //          x_offset <= 0;
+         //          y_offset <= y_offset + 1;
+         //       end
+         //       else begin
+         //          x_offset <= x_offset;
+         //          y_offset <= y_offset;
+         //       end
+         //    end
+         // end
+         // else begin
+         //    if (x_offset == 3) begin
+         //       if(y_offset != 3) begin
+         //          x_offset <= 0;
+         //          y_offset <= y_offset + 1;
+         //       end
+         //       else begin
+         //          x_offset <= x_offset;
+         //          y_offset <= y_offset;
+         //       end
+         //    end
+         // end
       end
    end
 endmodule
