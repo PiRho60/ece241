@@ -179,6 +179,8 @@ module datapath(input Resetn, Clock,
          count = 0;
          x_offset = 0;
          y_offset = 0;
+         x_init = 0;
+         y_init = 0;
       end
 
       oX = x_init + x_offset;
