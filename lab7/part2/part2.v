@@ -93,7 +93,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
    always @(*)
    begin: enable_signals
 
-   if (!Resetn) Done = 0;
+      if (!Resetn) Done = 0;
 
       clear_count = 0;
       ld_x_init = 0;
@@ -106,14 +106,19 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
       Plot = 0;
       
       case (current_state)
+         S_LOAD_X:
+            if(LoadX) ld_x_init = 1;
          S_LOAD_X_WAIT:
             ld_x_init = 1;
-         // S_LOAD_Y:
+         S_LOAD_Y:
+            if (PlotBox) begin 
+               ld_y_init = 1;
+               ld_colour = 1;
+            end
+         // S_LOAD_Y_WAIT:begin
          //    ld_y_init = 1;
-         S_LOAD_Y_WAIT:begin
-            ld_y_init = 1;
-            ld_colour = 1;
-         end
+         //    ld_colour = 1;
+         // end
          S_DRAW: begin
             Done = 0;
             increment_count = 1;
@@ -124,7 +129,8 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
             clear_count = 1;
             ld_colour_black = 1; 
             ld_x_init_black = 1;
-            ld_y_init_black = 1;   
+            ld_y_init_black = 1;
+   
          end
          S_DRAW_BLACK: begin
             increment_count = 1;
@@ -169,19 +175,6 @@ module datapath(input Resetn, Clock,
    parameter Y_SCREEN_PIXELS = 7'd120;
 
    always @(*) begin
-      if (ld_x_init) x_init = XY_Coord;
-      if (ld_y_init) y_init = XY_Coord;
-      if (ld_x_init_black) x_init = 0;
-      if (ld_y_init_black) y_init = 0;
-      if (ld_colour) oColour = Colour;
-      if (ld_colour_black) oColour = 0;
-      if (clear_count) begin
-         count = 0;
-         x_offset = 0;
-         y_offset = 0;
-         x_init = 0;
-         y_init = 0;
-      end
 
       oX = x_init + x_offset;
       oY = y_init + y_offset; 
@@ -200,13 +193,19 @@ module datapath(input Resetn, Clock,
          count <= 0;
       end
       else begin
-         // if (ld_x_init) x_init <= XY_Coord;
-         // if (ld_y_init) y_init <= XY_Coord;
-         // if (ld_x_init_black) x_init <= 0;
-         // if (ld_y_init_black) y_init <= 0;
-         // if (ld_colour) oColour <= Colour;
-         // if (ld_colour_black) oColour <= 0;
-         // if (clear_count) count <= 0;
+         if (ld_x_init) x_init = XY_Coord;
+         if (ld_y_init) y_init = XY_Coord;
+         if (ld_x_init_black) x_init = 0;
+         if (ld_y_init_black) y_init = 0;
+         if (ld_colour) oColour = Colour;
+         if (ld_colour_black) oColour = 0;
+         if (clear_count) begin
+            count = 0;
+            x_offset = 0;
+            y_offset = 0;
+            x_init = 0;
+            y_init = 0;
+         end
 
          if (increment_count) begin 
             
