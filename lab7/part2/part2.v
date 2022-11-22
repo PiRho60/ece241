@@ -34,7 +34,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
               .ld_colour(ld_colour),
               .clear_count(clear_count),
               .ld_x_init_black(ld_x_init_black),
-              .ld_x_init_black(ld_y_init_black),
+              .ld_y_init_black(ld_y_init_black),
               .ld_colour_black(ld_colour_black)
               );
 
@@ -47,7 +47,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
                .ld_colour(ld_colour),
                .clear_count(clear_count),
               .ld_x_init_black(ld_x_init_black),
-              .ld_x_init_black(ld_y_init_black),
+              .ld_y_init_black(ld_y_init_black),
               .ld_colour_black(ld_colour_black)
                );
    //
@@ -84,7 +84,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          S_LOAD_Y: next_state = PlotBox ? S_LOAD_Y_WAIT : S_LOAD_Y;
          S_LOAD_Y_WAIT: next_state = PlotBox ? S_LOAD_Y_WAIT : S_DRAW;
          S_DRAW: next_state = (count == 4'b1111) ? S_DONE : S_DRAW;
-         S_LOAD_BLACK_WAIT = Black ? S_LOAD_BLACK_WAIT : S_DRAW_BLACK;
+         S_LOAD_BLACK_WAIT: next_state = Black ? S_LOAD_BLACK_WAIT : S_DRAW_BLACK;
          S_DRAW_BLACK: next_state = (count == X_SCREEN_PIXELS*Y_SCREEN_PIXELS - 1) ? S_DONE : S_DRAW_BLACK;
          S_DONE: next_state = S_LOAD_X;
       endcase
