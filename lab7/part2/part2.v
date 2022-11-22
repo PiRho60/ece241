@@ -197,6 +197,7 @@ module datapath(input Resetn, Clock,
          if (ld_y_init_black) y_init <= 0;
          if (ld_colour) oColour <= Colour;
          if (ld_colour_black) oColour <= 0;
+         if (clear_count) count <= 0;
 
          if (increment_count) begin 
             count <= count + 1;
