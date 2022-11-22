@@ -24,7 +24,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
    //
    // Your code goes here
    wire ld_x_init, ld_y_init, increment_count, clearing_screen, ld_colour, clear_count, ld_x_init_black, ld_y_init_black, ld_colour_black;
-   wire [3:0] count;
+   wire [14:0] count;
    control #(.X_SCREEN_PIXELS(X_SCREEN_PIXELS), .Y_SCREEN_PIXELS(Y_SCREEN_PIXELS)) c0(.Resetn(iResetn), .PlotBox(iPlotBox), .Black(iBlack), 
               .Clock(iClock), .LoadX(iLoadX), .count(count),
               .Done(oDone), .ld_x_init(ld_x_init), .ld_y_init(ld_y_init),
@@ -55,7 +55,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
 endmodule // part2
 
 module control(input Resetn, PlotBox, Black, Clock, LoadX, 
-               input [3:0] count,
+               input [14:0] count,
                output reg Done = 0,
                output reg ld_x_init = 0, ld_y_init = 0, ld_colour = 0, increment_count = 0, 
                output reg ld_x_init_black = 0, ld_y_init_black = 0, ld_colour_black = 0,
