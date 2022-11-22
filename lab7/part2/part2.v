@@ -200,5 +200,6 @@ module datapath(input Resetn, Clock,
                end
             end
          end
-
+      end
+   end
 endmodule
