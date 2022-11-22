@@ -14,7 +14,6 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
    input wire [6:0] iXY_Coord;
    input wire 	    iClock;
    output wire [7:0] oX;         // VGA pixel coordinates
-   assign oX[7] = 0;
    output wire [6:0] oY;
 
    output wire [2:0] oColour;     // VGA pixel colour (0-7)
@@ -63,6 +62,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
                );
 
    reg [2:0] current_state, next_state;
+   reg Done_enable = 0, Done_disable = 0;
 
    localparam S_LOAD_X = 0,
               S_LOAD_X_WAIT = 1,
@@ -93,8 +93,6 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
    always @(*)
    begin: enable_signals
 
-      if (!Resetn) Done = 0;
-
       clear_count = 0;
       ld_x_init = 0;
       ld_y_init = 0;
@@ -103,13 +101,16 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
       ld_colour = 0;
       ld_colour_black = 0;
       increment_count = 0;
+      clear_count = 0;
       Plot = 0;
+      Done_enable = 0;
+      Done_disable = 0;
       
       case (current_state)
          S_LOAD_X:
             if(LoadX) ld_x_init = 1;
-         S_LOAD_X_WAIT:
-            ld_x_init = 1;
+         // S_LOAD_X_WAIT:
+         //    ld_x_init = 1;
          S_LOAD_Y:
             if (PlotBox) begin 
                ld_y_init = 1;
@@ -120,12 +121,12 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          //    ld_colour = 1;
          // end
          S_DRAW: begin
-            Done = 0;
+            Done_disable = 0;
             increment_count = 1;
             Plot = 1;
          end
          S_LOAD_BLACK_WAIT: begin
-            Done = 0;
+            Done_disable = 0;
             clear_count = 1;
             ld_colour_black = 1; 
             ld_x_init_black = 1;
@@ -139,7 +140,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          end
          S_DONE: begin
             clear_count = 1;
-            Done = 1;
+            Done_enable = 1;
          end
       endcase
    end
@@ -149,6 +150,12 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
       if (!Resetn) current_state <= S_LOAD_X;
       else if (Black) current_state <= S_LOAD_BLACK_WAIT;  
       else current_state <= next_state;
+   end
+
+   always @(posedge Clock) begin
+      if (!Resetn) Done = 0;
+      else if (Done_enable) Done = 1;
+      else if (Done_disable) Done = 0;
    end
 
 
