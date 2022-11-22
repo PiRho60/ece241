@@ -200,39 +200,5 @@ module datapath(input Resetn, Clock,
                end
             end
          end
-         
-         if (increment_count) begin
-            count <= count + 1;
-            x_offset <= x_offset + 1;
-         end
-         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
-         if (clear_count) count <= 0;
-
-         if (clearing_screen) begin
-            if (x_offset == X_SCREEN_PIXELS) begin
-               if(y_offset != Y_SCREEN_PIXELS) begin
-                  x_offset <= 0;
-                  y_offset <= y_offset + 1;
-               end
-               else begin
-                  x_offset <= x_offset;
-                  y_offset <= y_offset;
-               end
-            end
-         end
-         else begin
-            if (x_offset == 3) begin
-               if(y_offset != 3) begin
-                  x_offset <= 0;
-                  y_offset <= y_offset + 1;
-               end
-               else begin
-                  x_offset <= x_offset;
-                  y_offset <= y_offset;
-               end
-            end
-         end
-      end
-   end
 
 endmodule
