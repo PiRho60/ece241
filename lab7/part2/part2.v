@@ -24,9 +24,9 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
    //
    // Your code goes here
    wire ld_x, ld_y, increment_count, clearing_screen, ld_colour, clear_count;
-   wire [3:0] offset_count;
+   wire [3:0] count;
    control #(.X_SCREEN_PIXELS(X_SCREEN_PIXELS), .Y_SCREEN_PIXELS(Y_SCREEN_PIXELS)) c0(.Resetn(iResetn), .PlotBox(iPlotBox), .Black(iBlack), 
-              .Clock(iClock), .LoadX(iLoadX), .offset_count(offset_count),
+              .Clock(iClock), .LoadX(iLoadX), .count(count),
               .Done(oDone), .ld_x(ld_x), .ld_y(ld_y),
               .increment_count(increment_count),
               .clearing_screen(clearing_screen),
@@ -40,7 +40,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
                .ld_x(ld_x), .ld_y(ld_y), .increment_count(increment_count),
                .clearing_screen(clearing_screen), .oX(oX), .oY(oY),
                .oColour(oColour),
-               .offset_count(offset_count),
+               .count(count),
                .ld_colour(ld_colour),
                .clear_count(clear_count)
                );
@@ -49,7 +49,7 @@ module part2(iResetn,iPlotBox,iBlack,iColour,iLoadX,iXY_Coord,iClock,oX,oY,oColo
 endmodule // part2
 
 module control(input Resetn, PlotBox, Black, Clock, LoadX, 
-               input [3:0] offset_count,
+               input [3:0] count,
                output reg Done = 0,
                output reg ld_x = 0, ld_y = 0, ld_colour = 0, increment_count = 0, 
                output reg Plot = 0, clearing_screen = 0, clear_count = 0
@@ -75,8 +75,8 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          S_LOAD_X_WAIT: next_state = LoadX ? S_LOAD_X_WAIT : S_LOAD_Y;
          S_LOAD_Y: next_state = PlotBox ? S_LOAD_Y_WAIT : S_LOAD_Y;
          S_LOAD_Y_WAIT: next_state = PlotBox ? S_LOAD_Y_WAIT : S_DRAW;
-         S_DRAW: next_state = (offset_count == 4'b1111) ? S_DONE : S_DRAW;
-         S_DRAW_BLACK: next_state = (offset_count == X_SCREEN_PIXELS*Y_SCREEN_PIXELS - 1) ? S_DONE : S_DRAW_BLACK;
+         S_DRAW: next_state = (count == 4'b1111) ? S_DONE : S_DRAW;
+         S_DRAW_BLACK: next_state = (count == X_SCREEN_PIXELS*Y_SCREEN_PIXELS - 1) ? S_DONE : S_DRAW_BLACK;
          S_DONE: next_state = S_LOAD_X;
       endcase
    end
@@ -97,7 +97,6 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
          S_LOAD_X:
             clear_count = 1;
          S_LOAD_X_WAIT:
-
             ld_x = 1;
          // S_LOAD_Y:
          //    ld_y = 1;
@@ -140,11 +139,11 @@ module datapath(input Resetn, Clock,
                 output reg [7:0] oX = 0, 
                 output reg [6:0] oY = 0,
                 output reg [2:0] oColour = 0,
-                output reg [14:0] offset_count = 0
+                output reg [14:0] count = 0
                 );
 
-   reg [7:0] x_pos;
-   reg [6:0] y_pos;
+   reg [7:0] x_init;
+   reg [6:0] y_init;
    
    reg [1:0] x_offset;
    reg [1:0] y_offset;
@@ -153,32 +152,84 @@ module datapath(input Resetn, Clock,
    parameter Y_SCREEN_PIXELS = 7'd120;
 
    always @(*) begin
-      x_offset = offset_count[1:0];
-      y_offset = offset_count[3:2];
-      oX = x_pos + x_offset;
-      oY = y_pos + y_offset; 
+      if (clearing_screen) begin
+         x_init = 0;
+         y_init = 0;
+      end
+
+      oX = x_init + x_offset;
+      oY = y_init + y_offset; 
    end
 
    always @(posedge Clock)
    begin
       if(!Resetn)
       begin
-         x_pos <= 0;
-         y_pos <= 0;
+         x_init <= 0;
+         y_init <= 0;
+         x_offset <= 0;
+         y_offset <= 0;
          oColour <= 0;
-         offset_count <= 0;
+         count <= 0;
       end
       else begin
-         if (ld_x) x_pos <= XY_Coord;
-         if (ld_y) y_pos <= XY_Coord;
-         if (increment_count) offset_count <= offset_count + 1;
-         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
-         if (clear_count) offset_count <= 0;
+         if (ld_x) x_init <= XY_Coord;
+         if (ld_y) y_init <= XY_Coord;
 
          if (clearing_screen) begin
-            if (x_pos == X_SCREEN_PIXELS-1 && y_pos != Y_SCREEN_PIXELS-1) begin
-                  x_pos <= 0;
-                  y_pos <= y_offset + 1;
+            if (x_offset == X_SCREEN_PIXELS) begin
+               if(y_offset != Y_SCREEN_PIXELS) begin
+                  x_offset <= 0;
+                  y_offset <= y_offset + 1;
+               end
+               else begin
+                  x_offset <= x_offset;
+                  y_offset <= y_offset;
+               end
+            end
+         end
+         else begin
+            if (x_offset == 3) begin
+               if(y_offset != 3) begin
+                  x_offset <= 0;
+                  y_offset <= y_offset + 1;
+               end
+               else begin
+                  x_offset <= x_offset;
+                  y_offset <= y_offset;
+               end
+            end
+         end
+         
+         if (increment_count) begin
+            count <= count + 1;
+            x_offset <= x_offset + 1;
+         end
+         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
+         if (clear_count) count <= 0;
+
+         if (clearing_screen) begin
+            if (x_offset == X_SCREEN_PIXELS) begin
+               if(y_offset != Y_SCREEN_PIXELS) begin
+                  x_offset <= 0;
+                  y_offset <= y_offset + 1;
+               end
+               else begin
+                  x_offset <= x_offset;
+                  y_offset <= y_offset;
+               end
+            end
+         end
+         else begin
+            if (x_offset == 3) begin
+               if(y_offset != 3) begin
+                  x_offset <= 0;
+                  y_offset <= y_offset + 1;
+               end
+               else begin
+                  x_offset <= x_offset;
+                  y_offset <= y_offset;
+               end
             end
          end
       end
