@@ -106,8 +106,6 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
       Plot = 0;
       
       case (current_state)
-         S_LOAD_X:
-            clear_count = 1;
          S_LOAD_X_WAIT:
             ld_x_init = 1;
          // S_LOAD_Y:
@@ -134,6 +132,7 @@ module control(input Resetn, PlotBox, Black, Clock, LoadX,
             clearing_screen = 1;
          end
          S_DONE: begin
+            clear_count = 1;
             Done = 1;
          end
       endcase
