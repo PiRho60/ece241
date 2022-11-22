@@ -163,6 +163,7 @@ module datapath(input Resetn, Clock,
 
    always @(posedge Clock)
    begin
+
       if(!Resetn)
       begin
          x_init <= 0;
@@ -175,6 +176,7 @@ module datapath(input Resetn, Clock,
       else begin
          if (ld_x) x_init <= XY_Coord;
          if (ld_y) y_init <= XY_Coord;
+         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
 
          if (clearing_screen) begin
             if (x_offset == X_SCREEN_PIXELS) begin
@@ -201,8 +203,10 @@ module datapath(input Resetn, Clock,
             end
          end
 
-         if (ld_colour) oColour <= clearing_screen ? 0 : Colour;
-         if (increment_count) count <= count + 1;
+         if (increment_count) begin 
+            count <= count + 1;
+            x_offset <= x_offset + 1;
+         end
       end
    end
 endmodule
