@@ -1,19 +1,19 @@
 #######################Part1###########################
-Start time: 16:02:37 on Nov 20,2022
+Start time: 13:01:20 on Nov 22,2022
 vlog part1.v 
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module part1
 
 Top level modules:
 	part1
-End time: 16:02:37 on Nov 20,2022, Elapsed time: 0:00:00
+End time: 13:01:21 on Nov 22,2022, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 Reading pref.tcl
 
 # 10.6d
 
 # vsim -L altera_mf_ver -c -do "/cad2/ece241f/public/7/test/run.do" work.part1_tb 
-# Start time: 16:02:37 on Nov 20,2022
+# Start time: 13:01:21 on Nov 22,2022
 # Loading sv_std.std
 # Loading work.part1_tb
 # Loading work.part1
@@ -41,7 +41,7 @@ Reading pref.tcl
 # At cycle                   18, Reading: addr =  3, output =  2, golden_output =  2, PASSED
 # ** Note: $finish    : /cad2/ece241f/public/7/test/part1_tb.sv(52)
 #    Time: 20 ns  Iteration: 0  Instance: /part1_tb
-# End time: 16:02:37 on Nov 20,2022, Elapsed time: 0:00:00
+# End time: 13:01:22 on Nov 22,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 7
 ######################SUMMARY of part1##########################
 Number of Errors by compiling the verilog code: 0
@@ -49,3 +49,93 @@ Number of Errors by running the simulation: 0
 Number of PASSED: 4
 Number of FAILED: 0
 part1 is done!
+#######################Part2###########################
+Start time: 13:01:22 on Nov 22,2022
+vlog part2.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part2
+-- Compiling module control
+-- Compiling module datapath
+
+Top level modules:
+	part2
+End time: 13:01:22 on Nov 22,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/7/test/run.do" work.part2_tb 
+# Start time: 13:01:22 on Nov 22,2022
+# Loading sv_std.std
+# Loading work.part2_tb
+# Loading work.part2
+# Loading work.control
+# Loading work.datapath
+# do /cad2/ece241f/public/7/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, iResetn = 0, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   10, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   15, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   20, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 1, iColour = 0, iXY_Coord =   4
+# At cycle                   25, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   30, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   35, iResetn = 1, iPlotBox = 1, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   40, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# Start drawing a RED 4x4 box at (4,1)
+# At cycle                   58, Pixel (          4,           1) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          4,           2) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          4,           3) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          4,           4) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          5,           1) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          5,           2) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          5,           3) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          5,           4) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          6,           1) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          6,           2) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          6,           3) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          6,           4) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          7,           1) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          7,           2) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          7,           3) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          7,           4) has Colour RED = 4, PASSED
+# At cycle                   58, Pixel (          0,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          4,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          5,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          6,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          7,           0) is unaffected, PASSED
+# ** Note: $finish    : /cad2/ece241f/public/7/test/part2_tb.sv(178)
+#    Time: 58 ns  Iteration: 0  Instance: /part2_tb
+# End time: 13:01:23 on Nov 22,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 7
+######################SUMMARY of part2##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 40
+Number of FAILED: 0
+part2 is done!

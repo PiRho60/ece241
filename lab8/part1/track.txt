@@ -1,0 +1,195 @@
+#######################Part1###########################
+Start time: 12:12:55 on Nov 27,2022
+vlog part1.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part1
+-- Compiling module DelayCounter
+-- Compiling module FrameCounter
+-- Compiling module control
+-- Compiling module datapath
+
+Top level modules:
+	part1
+End time: 12:12:55 on Nov 27,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -L altera_mf_ver -c -do "/cad2/ece241f/public/8/test/run.do" work.part1_tb 
+# Start time: 12:12:55 on Nov 27,2022
+# Loading sv_std.std
+# Loading work.part1_tb
+# Loading work.part1
+# Loading work.DelayCounter
+# Loading work.FrameCounter
+# Loading work.control
+# Loading work.datapath
+# do /cad2/ece241f/public/8/test/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, iResetn = 0, iColour = 0
+# At cycle                   20, iResetn = 1, iColour = 5
+# Check frame 0
+# At cycle                   40, frame #           0, your oNewFrame = 1 after          20 cycles, each cycle under          24 is a bonus 5% if properly maintained throughout tests
+# CAUTION: Cycles between oNewFrame going high must always be the same, regardless of frame # or reset being asserted in order to receive any bonus
+# If # of cycles between oNewFrame going high is different across any two assertions throughout run-time, your bonus multiplier will get set to 1.0x
+# Check frame 1
+# At cycle                   61, frame #           1, your oNewFrame = 1 after          21 cycles
+# 	This is not the same as the          20 cycles it took for your previous frame(s) . You will NOT receive the bonus
+# At cycle                   61, Pixel (          0,           0) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          0,           1) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          0,           2) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          0,           3) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          1,           0) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          1,           1) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          1,           2) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          1,           3) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          2,           0) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          2,           1) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          2,           2) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          2,           3) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          3,           0) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          3,           1) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          3,           2) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          3,           3) has Colour PURPLE, PASSING
+# At cycle                   61, Pixel (          0,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          0,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          0,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          1,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          1,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          1,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          2,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          2,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          2,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          3,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          3,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          3,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           0) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           1) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           2) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           3) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          4,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           0) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           1) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           2) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           3) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          5,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           0) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           1) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           2) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           3) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          6,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           0) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           1) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           2) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           3) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          7,           6) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           0) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           1) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           2) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           3) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           4) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           5) is unaffected, PASSING
+# At cycle                   61, Pixel (          8,           6) is unaffected, PASSING
+# Check frame 16
+# At cycle                  376, Pixel (          1,           1) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          1,           2) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          1,           3) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          1,           4) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          2,           1) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          2,           2) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          2,           3) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          2,           4) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          3,           1) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          3,           2) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          3,           3) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          3,           4) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          4,           1) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          4,           2) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          4,           3) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          4,           4) has Colour YELLOW, PASSING
+# At cycle                  376, Pixel (          0,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           1) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           2) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           3) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           4) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          0,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          1,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          1,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          1,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          2,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          2,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          2,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          3,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          3,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          3,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          4,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          4,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          4,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           1) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           2) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           3) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           4) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          5,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           1) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           2) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           3) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           4) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          6,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           1) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           2) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           3) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           4) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          7,           6) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           0) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           1) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           2) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           3) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           4) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           5) is unaffected, PASSING
+# At cycle                  376, Pixel (          8,           6) is unaffected, PASSING
+# Printing passes across all test cases
+# PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED PASSED 
+# 
+# 
+# PASS/FAIL SANITY CHECK...
+# TOTAL NUMBER OF REGULAR TEST CASES IS         126
+# Your module is passing         126 cases
+# Max bonus multiplier is 1.2x the number of passing cases
+# Your bonus multiplier is 1.000000x. Check detailed output for specific reason
+# Bonus failures are not reported individually on terminal
+# YOUR FINAL NUMBER OF PASSING CASES INCLUDING THE BONUS IS:         126
+# 
+# 
+# 
+# ** Note: $finish    : /cad2/ece241f/public/8/test/part1_tb.sv(280)
+#    Time: 376 ns  Iteration: 0  Instance: /part1_tb
+# End time: 12:12:56 on Nov 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 7
+######################SUMMARY of part1##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 126
+Number of FAILED: 0
+part1 is done!

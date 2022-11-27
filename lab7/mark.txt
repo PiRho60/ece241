@@ -1,0 +1,307 @@
+#######################Part1###########################
+Start time: 19:20:39 on Nov 26,2022
+vlog part1.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part1
+
+Top level modules:
+	part1
+End time: 19:20:39 on Nov 26,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -L altera_mf_ver -c -do "/cad2/ece241f/public/7/mark/run.do" work.part1_tb 
+# Start time: 19:20:40 on Nov 26,2022
+# Loading sv_std.std
+# Loading work.part1_tb
+# Loading work.part1
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# do /cad2/ece241f/public/7/mark/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, addr =  0, wren = 1, data =  x
+# At cycle                    0, addr =  0, wren = 1, data =  x
+# At cycle                    2, addr =  1, wren = 1, data =  0
+# At cycle                    4, addr =  2, wren = 1, data =  4
+# At cycle                    6, addr =  3, wren = 1, data = 10
+# At cycle                    8, addr =  4, wren = 1, data =  2
+# At cycle                   10, addr =  5, wren = 1, data = 12
+# At cycle                   12, addr =  6, wren = 1, data =  8
+# At cycle                   14, addr =  7, wren = 1, data =  6
+# At cycle                   16, addr =  8, wren = 1, data =  6
+# At cycle                   18, addr =  9, wren = 1, data =  8
+# At cycle                   20, addr = 10, wren = 1, data = 12
+# At cycle                   22, addr = 11, wren = 1, data =  2
+# At cycle                   24, addr = 12, wren = 1, data = 10
+# At cycle                   26, addr = 13, wren = 1, data =  4
+# At cycle                   28, addr = 14, wren = 1, data =  0
+# At cycle                   30, addr = 15, wren = 1, data = 14
+# At cycle                   32, addr = 16, wren = 1, data = 14
+# At cycle                   34, addr = 17, wren = 1, data =  0
+# At cycle                   36, addr = 18, wren = 1, data =  4
+# At cycle                   38, addr = 19, wren = 1, data = 10
+# At cycle                   40, addr = 20, wren = 1, data =  2
+# At cycle                   42, addr = 21, wren = 1, data = 12
+# At cycle                   44, addr = 22, wren = 1, data =  8
+# At cycle                   46, addr = 23, wren = 1, data =  6
+# At cycle                   48, addr = 24, wren = 1, data =  6
+# At cycle                   50, addr = 25, wren = 1, data =  8
+# At cycle                   52, addr = 26, wren = 1, data = 12
+# At cycle                   54, addr = 27, wren = 1, data =  2
+# At cycle                   56, addr = 28, wren = 1, data = 10
+# At cycle                   58, addr = 29, wren = 1, data =  4
+# At cycle                   60, addr = 30, wren = 1, data =  0
+# At cycle                   62, addr = 31, wren = 1, data = 14
+# At cycle                   66, addr =  0, wren = 0, data =  0
+# At cycle                   68, Reading: addr =  0, output =  0, golden_output =  0, PASSED
+# At cycle                   70, Reading: addr =  1, output =  4, golden_output =  4, PASSED
+# At cycle                   72, Reading: addr =  2, output = 10, golden_output = 10, PASSED
+# At cycle                   74, Reading: addr =  3, output =  2, golden_output =  2, PASSED
+# At cycle                   76, Reading: addr =  4, output = 12, golden_output = 12, PASSED
+# At cycle                   78, Reading: addr =  5, output =  8, golden_output =  8, PASSED
+# At cycle                   80, Reading: addr =  6, output =  6, golden_output =  6, PASSED
+# At cycle                   82, Reading: addr =  7, output =  6, golden_output =  6, PASSED
+# At cycle                   84, Reading: addr =  8, output =  8, golden_output =  8, PASSED
+# At cycle                   86, Reading: addr =  9, output = 12, golden_output = 12, PASSED
+# At cycle                   88, Reading: addr = 10, output =  2, golden_output =  2, PASSED
+# At cycle                   90, Reading: addr = 11, output = 10, golden_output = 10, PASSED
+# At cycle                   92, Reading: addr = 12, output =  4, golden_output =  4, PASSED
+# At cycle                   94, Reading: addr = 13, output =  0, golden_output =  0, PASSED
+# At cycle                   96, Reading: addr = 14, output = 14, golden_output = 14, PASSED
+# At cycle                   98, Reading: addr = 15, output = 14, golden_output = 14, PASSED
+# At cycle                  100, Reading: addr = 16, output =  0, golden_output =  0, PASSED
+# At cycle                  102, Reading: addr = 17, output =  4, golden_output =  4, PASSED
+# At cycle                  104, Reading: addr = 18, output = 10, golden_output = 10, PASSED
+# At cycle                  106, Reading: addr = 19, output =  2, golden_output =  2, PASSED
+# At cycle                  108, Reading: addr = 20, output = 12, golden_output = 12, PASSED
+# At cycle                  110, Reading: addr = 21, output =  8, golden_output =  8, PASSED
+# At cycle                  112, Reading: addr = 22, output =  6, golden_output =  6, PASSED
+# At cycle                  114, Reading: addr = 23, output =  6, golden_output =  6, PASSED
+# At cycle                  116, Reading: addr = 24, output =  8, golden_output =  8, PASSED
+# At cycle                  118, Reading: addr = 25, output = 12, golden_output = 12, PASSED
+# At cycle                  120, Reading: addr = 26, output =  2, golden_output =  2, PASSED
+# At cycle                  122, Reading: addr = 27, output = 10, golden_output = 10, PASSED
+# At cycle                  124, Reading: addr = 28, output =  4, golden_output =  4, PASSED
+# At cycle                  126, Reading: addr = 29, output =  0, golden_output =  0, PASSED
+# At cycle                  128, Reading: addr = 30, output = 14, golden_output = 14, PASSED
+# At cycle                  130, Reading: addr = 31, output = 14, golden_output = 14, PASSED
+# ** Note: $finish    : /cad2/ece241f/public/7/mark/part1_tb.sv(53)
+#    Time: 132 ns  Iteration: 0  Instance: /part1_tb
+# End time: 19:20:40 on Nov 26,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+#######################SUMMARY of part1##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 32
+Number of FAILED: 0
+part1 is done!
+#######################Part2###########################
+Start time: 19:20:40 on Nov 26,2022
+vlog part2.v 
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module part2
+-- Compiling module control
+-- Compiling module datapath
+
+Top level modules:
+	part2
+End time: 19:20:40 on Nov 26,2022, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.6d
+
+# vsim -c -do "/cad2/ece241f/public/7/mark/run.do" work.part2_tb 
+# Start time: 19:20:41 on Nov 26,2022
+# Loading sv_std.std
+# Loading work.part2_tb
+# Loading work.part2
+# Loading work.control
+# Loading work.datapath
+# do /cad2/ece241f/public/7/mark/run.do
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# At cycle                    0, iResetn = 0, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   10, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   0
+# At cycle                   15, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   20, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 1, iColour = 0, iXY_Coord =   4
+# At cycle                   25, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 0, iXY_Coord =   4
+# At cycle                   30, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   35, iResetn = 1, iPlotBox = 1, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   40, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# Start drawing a RED 4x4 box at (4,1)
+# At cycle                   58, Pixel (          4,           1) has Colour RED, PASSED
+# At cycle                   58, Pixel (          4,           2) has Colour RED, PASSED
+# At cycle                   58, Pixel (          4,           3) has Colour RED, PASSED
+# At cycle                   58, Pixel (          4,           4) has Colour RED, PASSED
+# At cycle                   58, Pixel (          5,           1) has Colour RED, PASSED
+# At cycle                   58, Pixel (          5,           2) has Colour RED, PASSED
+# At cycle                   58, Pixel (          5,           3) has Colour RED, PASSED
+# At cycle                   58, Pixel (          5,           4) has Colour RED, PASSED
+# At cycle                   58, Pixel (          6,           1) has Colour RED, PASSED
+# At cycle                   58, Pixel (          6,           2) has Colour RED, PASSED
+# At cycle                   58, Pixel (          6,           3) has Colour RED, PASSED
+# At cycle                   58, Pixel (          6,           4) has Colour RED, PASSED
+# At cycle                   58, Pixel (          7,           1) has Colour RED, PASSED
+# At cycle                   58, Pixel (          7,           2) has Colour RED, PASSED
+# At cycle                   58, Pixel (          7,           3) has Colour RED, PASSED
+# At cycle                   58, Pixel (          7,           4) has Colour RED, PASSED
+# At cycle                   58, Pixel (          0,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          0,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          1,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          2,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           1) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           2) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           3) is unaffected, PASSED
+# At cycle                   58, Pixel (          3,           4) is unaffected, PASSED
+# At cycle                   58, Pixel (          4,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          5,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          6,           0) is unaffected, PASSED
+# At cycle                   58, Pixel (          7,           0) is unaffected, PASSED
+# At cycle                   63, iResetn = 1, iPlotBox = 0, iBlack = 1, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   68, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# Start blacking out screen
+# At cycle                   68, oDone = 1, impossible to finish in less than          40 cycles, signal not deasserted correctly, FAILED 40 TEST CASES
+# Resetting circuit and VGA buffer contents to avoid cumulative errors...
+# At cycle                   78, iResetn = 0, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   88, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   93, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                   98, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 1, iColour = 4, iXY_Coord =   1
+# At cycle                  103, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 4, iXY_Coord =   1
+# At cycle                  108, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   0
+# At cycle                  113, iResetn = 1, iPlotBox = 1, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   0
+# At cycle                  118, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   0
+# Start drawing a GREEN 4x4 box at (1,0)
+# At cycle                  136, Pixel (          1,           0) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          1,           1) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          1,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          1,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          2,           0) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          2,           1) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          2,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          2,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          3,           0) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          3,           1) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          3,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          3,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          4,           0) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          4,           1) has Colour GREEN, PASSED
+# At cycle                  136, Pixel (          4,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          4,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  136, Pixel (          0,           0) is unaffected, PASSED
+# At cycle                  136, Pixel (          0,           1) is unaffected, PASSED
+# At cycle                  136, Pixel (          0,           2) is unaffected, PASSED
+# At cycle                  136, Pixel (          0,           3) is unaffected, PASSED
+# At cycle                  136, Pixel (          0,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          1,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          2,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          3,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          4,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          5,           0) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          5,           1) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          5,           2) is unaffected, PASSED
+# At cycle                  136, Pixel (          5,           3) is unaffected, PASSED
+# At cycle                  136, Pixel (          5,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          6,           0) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          6,           1) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          6,           2) is unaffected, PASSED
+# At cycle                  136, Pixel (          6,           3) is unaffected, PASSED
+# At cycle                  136, Pixel (          6,           4) is unaffected, PASSED
+# At cycle                  136, Pixel (          7,           0) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          7,           1) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  136, Pixel (          7,           2) is unaffected, PASSED
+# At cycle                  136, Pixel (          7,           3) is unaffected, PASSED
+# At cycle                  136, Pixel (          7,           4) is unaffected, PASSED
+# Resetting part2 module but NOT VGA buffer contents...
+# At cycle                  146, iResetn = 0, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   0
+# At cycle                  156, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   0
+# At cycle                  161, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   4
+# At cycle                  166, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 1, iColour = 2, iXY_Coord =   4
+# At cycle                  171, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 2, iXY_Coord =   4
+# At cycle                  176, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 1, iXY_Coord =   1
+# At cycle                  181, iResetn = 1, iPlotBox = 1, iBlack = 0, iLoadX = 0, iColour = 1, iXY_Coord =   1
+# At cycle                  186, iResetn = 1, iPlotBox = 0, iBlack = 0, iLoadX = 0, iColour = 1, iXY_Coord =   1
+# Start drawing a BLUE 4x4 box at (4,1)
+# At cycle                  204, Pixel (          4,           1) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          4,           2) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          4,           3) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          4,           4) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          5,           1) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          5,           2) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          5,           3) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          5,           4) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          6,           1) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          6,           2) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          6,           3) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          6,           4) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          7,           1) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          7,           2) has Colour BLUE, PASSED
+# At cycle                  204, Pixel (          7,           3) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          7,           4) has Colour 0, Expected BLUE instead, FAILED
+# At cycle                  204, Pixel (          0,           0) is unaffected, PASSED
+# At cycle                  204, Pixel (          0,           1) is unaffected, PASSED
+# At cycle                  204, Pixel (          0,           2) is unaffected, PASSED
+# At cycle                  204, Pixel (          0,           3) is unaffected, PASSED
+# At cycle                  204, Pixel (          0,           4) is unaffected, PASSED
+# At cycle                  204, Pixel (          1,           0) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          1,           1) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          1,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          1,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          1,           4) is unaffected, PASSED
+# At cycle                  204, Pixel (          2,           0) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          2,           1) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          2,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          2,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          2,           4) is unaffected, PASSED
+# At cycle                  204, Pixel (          3,           0) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          3,           1) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          3,           2) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          3,           3) has Colour 0, Expected GREEN instead, FAILED
+# At cycle                  204, Pixel (          3,           4) is unaffected, PASSED
+# At cycle                  204, Pixel (          4,           0) has Colour GREEN, PASSED
+# At cycle                  204, Pixel (          5,           0) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  204, Pixel (          6,           0) has changed colors, supposed to be unaffected, FAILED
+# At cycle                  204, Pixel (          7,           0) has changed colors, supposed to be unaffected, FAILED
+# ** Note: $finish    : /cad2/ece241f/public/7/mark/part2_tb.sv(405)
+#    Time: 204 ns  Iteration: 0  Instance: /part2_tb
+# End time: 19:20:41 on Nov 26,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 7
+#######################SUMMARY of part2##########################
+Number of Errors by compiling the verilog code: 0
+Number of Errors by running the simulation: 0
+Number of PASSED: 89
+Number of FAILED: 32
+part2 is done!
+#######################Mark of part1##########################
+MARK: 15.00
+#######################Mark of part2##########################
+MARK: 33.00
+#######################TOTAL_MARK##########################
+TOTAL_MARK: 48.00
