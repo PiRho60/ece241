@@ -30,7 +30,7 @@ module part1(iColour,iResetn,iClock,oX,oY,oColour,oPlot,oNewFrame);
    parameter
      X_SCREEN_PIXELS = 160,  // X screen width for starting resolution
      Y_SCREEN_PIXELS = 120,  // Y screen height for starting resolution
-     CLOCKS_PER_SECOND = 5000, // 5 KHZ 
+     CLOCKS_PER_SECOND = 50_000_000, // 5 KHZ 
      X_BOXSIZE = 8'd4,   // Box X dimension
      Y_BOXSIZE = 7'd4,   // Box Y dimension
      X_MAX = X_SCREEN_PIXELS - 1 - (X_BOXSIZE-1), // 0-based and account for box width
@@ -65,12 +65,12 @@ module DelayCounter(input clk, resetn, output dcount_en);
 
    parameter PULSES_PER_SIXTIETH_SECOND = 0;
 
-   assign dcount_en = (dcount == PULSES_PER_SIXTIETH_SECOND);
+   assign dcount_en = (dcount == /*PULSES_PER_SIXTIETH_SECOND*/0);
    
    always @(posedge clk)
    begin
       if(!resetn) dcount <= 0;
-      else if (dcount == PULSES_PER_SIXTIETH_SECOND) dcount <= 0;
+      else if (dcount == PULSES_PER_SIXTIETH_SECOND-1) dcount <= 0;
       else dcount <= dcount + 1;
    end
 endmodule
@@ -106,8 +106,8 @@ module control(input iClock, iResetn,
    always @(*)
    begin: state_table
       case (current_state)
-         S_WAIT_FOR_RESET: next_state = (!iResetn) ? S_RESET : S_WAIT_FOR_RESET;
-         S_RESET: next_state = (!iResetn) ? S_DRAW_BOX : S_RESET;
+         S_WAIT_FOR_RESET: next_state = (!iResetn) ? /*S_RESET*/S_DRAW_BOX : S_WAIT_FOR_RESET;
+         //S_RESET: next_state = (!iResetn) ? S_DRAW_BOX : S_RESET;
          S_DRAW_BOX: next_state = (offset_count == 4'b1111) ? S_WAIT : S_DRAW_BOX;
          S_WAIT: next_state = (fcount == 'd14) ? S_CLEAR_BOX : S_WAIT;
          S_CLEAR_BOX: next_state = (offset_count == 4'b1111) ? S_UPDATE : S_CLEAR_BOX;
